@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/mystyle.css"],"names":[],"mappings":"AAAA,KAEI,uBACJ,CAEA,QAJI,iBAOJ,CAHA,GAEI,aACJ","file":"main.0142064f.chunk.css","sourcesContent":[".App{\n    text-align: center;\n    background-color: bisque;\n}\n\nul{\n    text-align: center;\n    color: forestgreen;\n}\n"]}
