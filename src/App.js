@@ -16,26 +16,34 @@ export function CalculateWinner(board) {
   for (let i = 0; i < winners.length; i++) {
     const [one, two, three] = winners[i];
     const boardOne = board[one];
+    console.log(board[one]);
+    console.log(winners[i]);
     if (boardOne && boardOne === board[two] && boardOne === board[three]) {
       return [true, boardOne, [one, two, three]];
     }
   }
+
   return [false, "", []];
 }
 
 export function Square({ className, buttonNumber, handleClick }) {
+  console.log(buttonNumber);
   return (
     <button type="button" className={className} onClick={handleClick}>
       <span>{buttonNumber}</span>
     </button>
+    
   );
 }
 
 export function Board({ board, squareClick, isWinner, winners }) {
   const SquareType = i => {
     const classType = type => {
+      console.log({i});
+    console.log({type});
       return `number ${i} ${type}`;
     };
+    
     let win = winners.some(winner => winner === i);
     if (isWinner) {
       if (win) {
@@ -83,11 +91,13 @@ function TicTacToe() {
     let currentHistory = current[move].squares;
     const newArr = [...currentHistory];
     newArr[i] = isNext;
+    setAttribute("disabled");
     setHistory(prevHistory => {
       let newHistory = {
         squares: newArr
       };
       return [...current, newHistory];
+      
     });
     setMove(prevMove => {
       return prevMove + 1;
@@ -104,6 +114,7 @@ function TicTacToe() {
     setHistory([{ squares: Array(9).fill(null) }]);
     setMove(0);
   }
+
 
   return (
     <div className="App">
